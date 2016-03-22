@@ -3,6 +3,8 @@
 \name{xtsboot}
 \alias{xtsboot}
 \title{Uses sample function to construct bootstrap error in xts objects
+Caution : DO NOT pass large values as sample is a slow function
+Replace is set to FALSE for sample as multiple xts objects in the same bootstrap subset cause issues in the metric functions
 The metric is computed for rep times sizefrac*(size) sized samples and the variance of the metric over these tries is returned
 This is NOT filtered for NA values outside of filtering in the functions we are passing to. This will be fixed.
 Can be used as a generalized wrapper for metrics that return numeric values from xts}
@@ -16,6 +18,8 @@ xtsboot(x, fun = NULL, sizefrac = 0.5, rep = 100, flag = 0)
 }
 \description{
 Uses sample function to construct bootstrap error in xts objects
+Caution : DO NOT pass large values as sample is a slow function
+Replace is set to FALSE for sample as multiple xts objects in the same bootstrap subset cause issues in the metric functions
 The metric is computed for rep times sizefrac*(size) sized samples and the variance of the metric over these tries is returned
 This is NOT filtered for NA values outside of filtering in the functions we are passing to. This will be fixed.
 Can be used as a generalized wrapper for metrics that return numeric values from xts
